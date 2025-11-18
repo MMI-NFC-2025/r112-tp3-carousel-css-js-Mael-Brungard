@@ -9,6 +9,7 @@ body {
   padding: 0;
   margin: 0;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 /* Mise en forme du carousel en CSS.
@@ -25,13 +26,16 @@ Les margin négatifs à gauche et à droite corresponde à l'éespace entre le n
 
 /* Compléter la suite du code */
 .carousel__controls {
+  position: absolute;
+  width: 90%;
+  margin-inline: 20px;
   display: flex;
   /* Utilise flexbox pour aligner les éléments enfants - https://developer.mozilla.org/fr/docs/Web/CSS/display */
   gap: 16px;
   /* Espace entre les éléments enfants 16px- https://developer.mozilla.org/fr/docs/Web/CSS/gap */
   align-items: center;
   /* Aligne les éléments enfants au centre verticalement - https://developer.mozilla.org/fr/docs/Web/CSS/align-items */
-  justify-content: center;
+  justify-content: space-between;
   /* Centre les éléments enfants horizontalement - https://developer.mozilla.org/fr/docs/Web/CSS/justify-content */
   margin-block: 16px;
   /* Marge de 16px en haut et en bas - https://developer.mozilla.org/fr/docs/Web/CSS/margin */
@@ -91,6 +95,7 @@ Les margin négatifs à gauche et à droite corresponde à l'éespace entre le n
   align-items: center;
   display: flex;
   flex-direction: column;
+  margin-bottom: 50px;
 }
 
 .carousel__item img {
