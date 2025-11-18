@@ -5,6 +5,12 @@ img {
   height: auto;
 }
 
+body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
 /* Mise en forme du carousel en CSS.
 Utiliser flex pour positionner les item du carousel les uns à coté des autres.
 La propriété "overflow-x" avec la valeur "scroll" permet rogner le contenu afin de tenir horizontalement dans la boîte de remplissage et d'ajouter un scroll horizontal si le contenu déborde.
@@ -53,7 +59,12 @@ Les margin négatifs à gauche et à droite corresponde à l'éespace entre le n
   /* Fait pivoter le bouton de 180 degrés - https://developer.mozilla.org/fr/docs/Web/CSS/transform */
 }
 
+.carousel__container::-webkit-scrollbar {
+  height: 0;
+}
+
 .carousel__container {
+  width: 80%;
   display: flex;
   gap: 16px;
   overflow-x: scroll;
@@ -69,13 +80,24 @@ Les margin négatifs à gauche et à droite corresponde à l'éespace entre le n
 }
 
 .carousel__item {
-  flex-grow: 1 260px;
+  flex: 1 0 260px;
   scroll-snap-align: center;
   /* L'élément prend 1 part de l'espace disponible, ne rétrécit pas, et a une largeur de base de 260px - https://developer.mozilla.org/fr/docs/Web/CSS/flex */
   /* Aligne l'élément au centre lors du défilement - https://developer.mozilla.org/fr/docs/Web/CSS/scroll-snap-align */
 }
 
+.carousel {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
 .carousel__item img {
   display: block;
   /* Affiche l'image comme un bloc - https://developer.mozilla.org/fr/docs/Web/CSS/display */
+}
+
+.hide {
+  width: 0;
 }
